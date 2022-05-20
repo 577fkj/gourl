@@ -1,7 +1,7 @@
-<html data-darkreader-mode="dynamic" data-darkreader-scheme="dark" class="sui-componentWrap">
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- saved from url=(0028)https://www.fkj233.cn/gourl/ -->
+<html data-darkreader-mode="dynamic" data-darkreader-scheme="dark" class="sui-componentWrap"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
   <title>Go Url</title>
   <script type="text/javascript">
     var bodyBgs = [];
@@ -18,29 +18,34 @@
     function Click() {
       var data = document.getElementById("input").value
       if (data == "") {
-        alert("地址错误!")
+        alert("地址不能为空!")
       } else {
         window.location.href = data
       }
     }
+	function keydown(e) {
+		if(e.keyCode == 13){
+			Click();
+		}
+		return true;
+	}
   </script>
 
   <style type="text/css">
     .main {
       position: relative;
-      height: 80%;
+      height: 100%;
       width: 100%;
-      margin: 20px auto;
       text-align: table;
     }
     .main div{
       position: absolute;
-      left: 25%;
+      left:auto;
       top: 50%;
       width: 100%;
       margin: 0 auto;
+      text-align: center;
     }
-
     .input_text {
       width: 512px;
       height: 16px;
@@ -83,9 +88,10 @@
 <body>
   <div class="main">
     <div>
-      <input type="text" class="input_text" id="input">
+      <input type="text" class="input_text" id="input" onkeydown="return keydown(event)">
       <input type="submit" value="Go Url" onclick="Click()" class="button_send">
     </div>
   </div>
-</body>
-</html>
+
+
+</body></html>
